@@ -1,0 +1,36 @@
+<!-- Create a div tag-->
+<div>
+	<!-- h1 tag to display Student Information title-->
+	<h1>STUDENTS INFORMATION</h1>
+
+	<!-- define a div with 3 buttons No filter, Age greater than 25, Name starts with A-->
+    <div>
+		<!--Button by name no filter calls noFilter() when clicked-->
+        <button (click)="noFilter()">No Filter</button>
+		<!--Button by name Age greater than 25 calls ageGreaterThan25() when clicked-->
+        <button (click)="ageGreaterThan25()">Age greater than 25</button>
+		<!--Button by name Name starts with  calls nameStartsWitha() when clicked-->
+        <button (click)="nameStartsWitha()">Name starts with A</button>
+    </div>
+
+	<!--Define a table with header Id, Name, Age, Email, Gender, Average Grade-->
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Email</th>
+			<th>Gender</th>
+			<th>Avg. Grade</th>
+		</tr>
+		<!--use ngFor to itterate over filterData and display information in td-->
+		<tr *ngFor="let student of filterData">
+			<td>{{student.id}}</td>
+			<td>{{student.name}}</td>
+			<td>{{student.age}}</td>
+			<td>{{student.email}}</td>
+			<td>{{student.gender}}</td>
+			<td>{{student.average_grade}}</td>
+		</tr>
+	</table>
+</div>
